@@ -1,11 +1,11 @@
-# diff.py
-Computes and displays the differences between two config files.
+# copyconfig.py
+Copies all user settings in a config file from one of the U modes (U1/U2/U3) to the M/A/S/P/Auto modes. This also invokes fixcrc.py on the file to update its CRC.
 
 Example command:
 
-python diff.py G:\NCSET006.BIN G:\NCSET006_backup.BIN
+python copyconfig.py G:\NCSET006.BIN 1
 
-This command would find all of the differences between the two input files and print them to the terminal.
+This command would copy the settings from U1 to M/A/S/P/Auto. Change the 1 to 2 or 3 to use U2 or U3 instead, respectively.
 
 
 # fixcrc.py
@@ -18,13 +18,14 @@ python fixcrc.py G:\NCSET006.BIN
 This command would change the CRC code at the end of NCSET006.BIN to match its contents.
 
 
-# copyconfig.py
-Copies all user settings in a config file from one of the U modes (U1/U2/U3) to the M/A/S/P/Auto modes. 
+# diff.py
+Computes and displays the differences between two config files.
+
 Example command:
 
-python copyconfig.py G:\NCSET006.BIN 1
+python diff.py G:\NCSET006.BIN G:\NCSET006_backup.BIN
 
-This command would copy the settings from U1 to M/A/S/P/Auto. Change the 1 to 2 or 3 to use U2 or U3 instead, respectively.
+This command would find all of the differences between the two input files and print them to the terminal.
 
 
 # runtests.py
