@@ -14,7 +14,7 @@ This command would copy the settings from U1 to M/A/S/P/Auto. Change the 1 to 2 
 
 
 # changemode.py
-Changes the mode (M/A/S/P/Auto) of a user settings file (U1/U2/U3).
+Changes the mode (M/A/S/P/Auto) of a user settings file (U1/U2/U3). This also invokes fixcrc.py on the file to update its CRC.
 
 Example command:
 
