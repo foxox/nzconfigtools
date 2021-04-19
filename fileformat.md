@@ -41,6 +41,8 @@ Within each config range, these sub-ranges are known:
 *  924-972
     *  The i-menu config starts at offset 924 from the beginning of a config range. Each i-menu tile is configured as one byte and the bytes are spaced 4 apart. They go left to right, top to bottom. So the top left i-menu tile is set at offset 924. The second one (to the right of the top left corner) is 924+4, etc. The i-menu tile options are listed below.
     For example, the i-menu for U2 starts at offset 189708 + offset 924 = byte 190632. The second i-menu item for U2 starts 4 bytes later at 190632+4=190636.
+* 1240
+    * The mode ID (whether it's Auto, Manual, Aperture Priority, Shutter Priority, or Program). See the Mode IDs section below
 *  1540-?
     *  The configured file prefix (the "DSC" in "DSC_****.***" filenames) starts at 1540 from beginning of config range. Not sure what the max length is.
 
@@ -98,3 +100,10 @@ Within each config range, these sub-ranges are known:
 * 50 Do not use - causes strange i-menu behavior.
 * 51 Group flash options
 Seems to be the end of usable options. Higher numbers all produce strange i-menu behavior.
+
+## Mode IDs
+* 29 = Program
+* 30 = Shutter Priority
+* 31 = Aperture Priority
+* 32 = Manual
+* 33 = Auto
