@@ -1,3 +1,8 @@
+# Hello!
+This is a collection of tools for working with Nikon Z5 settings files (NCSET006.BIN as saved to your memory card in slot 1 when you use "Save/load menu settings").
+Developed for and tested on Nikon Z5 firmware version 01.02.
+
+
 # copyconfig.py
 Copies all user settings in a config file from one of the U modes (U1/U2/U3) to the M/A/S/P/Auto modes. This also invokes fixcrc.py on the file to update its CRC.
 
@@ -16,6 +21,10 @@ Example command:
 python fixcrc.py G:\NCSET006.BIN
 
 This command would change the CRC code at the end of NCSET006.BIN to match its contents.
+
+
+# settings_file_layout.txt
+This file has information about the settings file format.
 
 
 # diff.py
