@@ -34,6 +34,28 @@ def test_copyconfig():
     # handle bad usermode number
     os.system("python copyconfig.py " + tmpfilename + " 4")
     os.system("python copyconfig.py " + tmpfilename + " 0")
+    # no file provided
+    os.system("python copyconfig.py")
+    os.remove(tmpfilename)
+    # todo: do more here than exercise it
+
+def test_changemode():
+    print("test_changemode")
+    tmpfilename = "tests/generated_by_unit_test.BIN"
+    shutil.copyfile("tests/S0.BIN", tmpfilename)
+    os.system(f"python changemode.py {tmpfilename} 0 a")
+    os.system(f"python changemode.py {tmpfilename} 1 a")
+    os.system(f"python changemode.py {tmpfilename} 2 a")
+    os.system(f"python changemode.py {tmpfilename} 3 a")
+    os.system(f"python changemode.py {tmpfilename} 4 a")
+    os.system(f"python changemode.py {tmpfilename} 1 A")
+    os.system(f"python changemode.py {tmpfilename} 1 M")
+    os.system(f"python changemode.py {tmpfilename} 1 AUTO")
+    os.system(f"python changemode.py {tmpfilename} 1 auto")
+    os.system(f"python changemode.py {tmpfilename} 1 p")
+    os.system(f"python changemode.py {tmpfilename} 1")
+    os.system(f"python changemode.py {tmpfilename}")
+    os.system(f"python changemode.py")
     os.remove(tmpfilename)
     # todo: do more here than exercise it
 
@@ -42,3 +64,4 @@ test_lib_diff()
 test_diff()
 test_fixcrc()
 test_copyconfig()
+test_changemode()
