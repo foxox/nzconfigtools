@@ -13,6 +13,16 @@ python copyconfig.py G:\NCSET006.BIN 1
 This command would copy the settings from U1 to M/A/S/P/Auto. Change the 1 to 2 or 3 to use U2 or U3 instead, respectively.
 
 
+# changemode.py
+Changes the mode (M/A/S/P/Auto) of a user settings file (U1/U2/U3).
+
+Example command:
+
+python changemode.py G:\NCSET006.BIN 1 A
+
+This command would change the mode of user file 1 to aperture-priority mode.
+
+
 # fixcrc.py
 Recomputes and replaces the CRC code and the end of a config file. If the file contents were not changed, the CRC code will not change. If you change file contents, you must fix the CRC or the camera will not allow you to load the file.
 

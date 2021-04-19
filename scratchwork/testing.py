@@ -22,22 +22,38 @@ def assign(menu, menu_idx, value):
 def access(menu, menu_idx):
     return data[menu[0]+menu_idx*4]
 
-def nextimenu(value):
-    return value+4
+
+maspa_offset = 169824
+u1_offset = 183080
+u2_offset = 189708
+u3_offset = 196336
+mode_id_suboffset = 1240
+i_menu_suboffset = 924
 
 # indexes in order of importance -- first one may be necessary, others clones with no effect on the z5
-maspa_imenu = [170748, 177376]
-u1_imenu = [184004]
-u2_imenu = [190632]
-u3_imenu = [197260]
+# maspa_imenu = [170748, 177376]
+# u1_imenu = [184004]
+# u2_imenu = [190632]
+# u3_imenu = [197260]
 
-offset=0
-print(offset)
-for i in range(0,12):
-    assign(u1_imenu, i, i+offset)
-    assign(u2_imenu, i, i+offset+1)
-    assign(u3_imenu, i, i+offset+2)
-    # assign(maspa_imenu, i, access(u1_imenu, i))
+# offset=0
+# print(offset)
+# for i in range(0,12):
+#     assign(u1_imenu, i, i+offset)
+#     assign(u2_imenu, i, i+offset+1)
+#     assign(u3_imenu, i, i+offset+2)
+#     # assign(maspa_imenu, i, access(u1_imenu, i))
+
+
+mode_id_p = 29
+mode_id_s = 30
+mode_id_a = 31
+mode_id_m = 32
+mode_id_auto = 33
+
+data[u1_offset+mode_id_suboffset] = mode_id_p
+data[u2_offset+mode_id_suboffset] = mode_id_s
+data[u3_offset+mode_id_suboffset] = mode_id_auto
 
 
 file = open(filename, "wb")
