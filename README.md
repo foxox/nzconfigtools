@@ -23,7 +23,7 @@ python fixcrc.py G:\NCSET006.BIN
 This command would change the CRC code at the end of NCSET006.BIN to match its contents.
 
 
-# settings_file_layout.txt
+# fileformat.md
 This file has information about the settings file format.
 
 
